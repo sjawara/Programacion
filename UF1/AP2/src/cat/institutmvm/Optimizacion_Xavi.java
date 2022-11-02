@@ -5,7 +5,7 @@
 package cat.institutmvm;
 
 import java.util.Scanner;
-
+//enllaç al video https://drive.google.com/file/d/1zk4bh9Phk_17gE62jxUtRp-FbgwWttX8/view?usp=share_link
 /**
  *
  * @author Alum
