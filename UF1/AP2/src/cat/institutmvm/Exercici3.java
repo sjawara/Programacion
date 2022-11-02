@@ -20,6 +20,7 @@ import java.util.Scanner;
 */
 public class Exercici3 {
 
+    private static final int CUO = 6;
     private static final String MSG = "Introdueix un nombre";
     private static final String MEJSI = "CORRECTE";
     private static final String MEJNO = "Aquest nombre no compleix els requisits";
@@ -32,13 +33,17 @@ public class Exercici3 {
     private static final String CUB = " Elevat al cub es ";
     private static final String MAXIM = "El maxim es ";
     private static final String MULTIPLE = " Es multiple de";
+    private static final  String NL = "Introduzca el numero de litros consumidos";
+    private static final  String MSG_1 = "El total de la factura es";
 
+    
     public static void main(String[] args) {
         int num, inum;
         double num1, num2, num3;
         Scanner sc = new Scanner(System.in);
 
         //Exercici a
+        //Pre: Rebem un nombre per teclat
         System.out.println(MSG + " " + "negatiu");
         num = sc.nextInt();
         if (num < 0) {
@@ -46,7 +51,10 @@ public class Exercici3 {
         } else {
             System.out.println(MEJNO);
         }
+        //Post:Determinar si el nombre es negatiu
+        
         //Exercici b
+        //Pre: Rebem un nombre per teclat
         System.out.println("\n");//Fem un salt de linea
         System.out.println(MSG + " " + "mes gran que 35");
         num = sc.nextInt();
@@ -55,7 +63,10 @@ public class Exercici3 {
         } else {
             System.out.println(MEJNO);
         }
+        //Post:Determinar si el nombre rebut es major que 35
+        
         //Exercici c
+        //Pre:Rebem un nombre per teclat
         System.out.println("\n");
         System.out.println(MSG + " " + "positiu i mes gran que 100");
         num = sc.nextInt();
@@ -64,7 +75,10 @@ public class Exercici3 {
         } else {
             System.out.println(MEJNO);
         }
+        //Post:Determinar si un nombre es positiu i major que 100
+        
         //Exercici d
+        //Rebem un nombre per teclat
         System.out.println("\n");
         System.out.println(MSG + " " + "entre -3 i el 27" + " " + INC);
         num = sc.nextInt();
@@ -73,16 +87,21 @@ public class Exercici3 {
         } else {
             System.out.println(MEJNO);
         }
+        //Post: Determinar si un nombre pertany al interval    
         //Exercici e
+        //Pre:Rebem un nombre per teclat 
         System.out.println("\n");
-        System.out.println(MSG + " " + "que no estigui entre el 35 i el 50" + INC);
+        System.out.println(MSG + " " + "que no estigui entre el 25 i el 50" + INC);
         num = sc.nextInt();
-        if (num < 35 || num > 50) {
+        if (num < 25 || num > 50) {
             System.out.println(MEJSI);
         } else {
             System.out.println(MEJNO);
         }
+        //Post: Determina si el numero introduit esta fora del rang que es de 25 a 50
+        
         //Exercici f
+        //Pre:Rebem dos nombres per teclat
         System.out.println("\n");
         System.out.println(MSG);
         num1 = sc.nextDouble();
@@ -93,7 +112,10 @@ public class Exercici3 {
         } else {
             System.out.println(RESNO);
         }
+        //Determinem si el modul dun nombre  entre un altre es major de 15
+        
         //Exercici g
+        //Pre: Rebem un nombre per teclat 
         System.out.println("\n");
         System.out.println(MSG);
         num = sc.nextInt();
@@ -102,7 +124,10 @@ public class Exercici3 {
         } else {
             System.out.println(SENNO);
         }
+        //Post:Determinem si un nombre es senar 
+        
         //Exercici h 
+        //Pre:rebem un nombre per teclat 
         System.out.println("\n");
         System.out.println(MSG);
         num = sc.nextInt();
@@ -111,7 +136,10 @@ public class Exercici3 {
         } else {
             System.out.println(num + CUB + num * num * num);
         }
+        //Post: Elebem al cuadrat el nombre si es parell i al cub si es senar
+        
         //Exercici i
+        //Pre Rebem 2 nombres per teclat
         System.out.println("\n");
         System.out.println(MSG);
         num1 = sc.nextDouble();
@@ -122,7 +150,10 @@ public class Exercici3 {
         } else {
             System.out.println(MAXIM + num2);
         }
+        //Post:Retornes el maxim de 2 nombres
+        
         //exercici j
+        //Rebem 3 nombres per teclat
         System.out.println("\n");
         System.out.println(MSG);
         num1 = sc.nextDouble();
@@ -139,7 +170,10 @@ public class Exercici3 {
                 System.out.println(MAXIM + num3);
             }
         }
+        //Post:Calculem el maxim de 3 nombres
+        
         //Eercici k
+        //Pre:Rebem un numero per treclat 
         System.out.println("\n");
         System.out.println(MSG);
         num = sc.nextInt();
@@ -151,7 +185,10 @@ public class Exercici3 {
 
             System.out.println(inum + " no" + MULTIPLE + num);
         }
+        //Post:Li diem al usuari si el seu segon nombre es multiple del primer
+        
     }
+    
 
 }
 
