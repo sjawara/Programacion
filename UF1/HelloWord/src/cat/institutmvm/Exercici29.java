@@ -20,7 +20,8 @@ public class Exercici29 {
         Scanner sc = new Scanner(System.in);
 
             
-            do {
+            do {        int i=0;
+
             System.out.println(MSG_1);
             tipusCorrecte = sc.hasNextInt();
             if (tipusCorrecte){
