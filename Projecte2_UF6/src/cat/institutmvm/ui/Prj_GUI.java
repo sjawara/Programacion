@@ -4,8 +4,17 @@
  */
 package cat.institutmvm.ui;
 
+import cat.institutmvm.entities.Pacient;
+import cat.institutmvm.entities.Persona;
+import cat.institutmvm.entities.Persona.Genere;
+import cat.institutmvm.exceptions.DAOException;
+import cat.institutmvm.impl.PacientImplDAO;
+import cat.institutmvm.impl.PersonaImplDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +29,10 @@ import javax.swing.border.Border;
  * @author Seku
  */
 public class Prj_GUI extends JFrame{
+    Pacient pac;
+    Persona per;
+    PacientImplDAO pacImpl = new PacientImplDAO();
+    PersonaImplDAO perImpl = new PersonaImplDAO();
     public Prj_GUI(){
     Toolkit screen = Toolkit.getDefaultToolkit();
     Dimension screenSize = screen.getScreenSize();
@@ -36,13 +49,13 @@ public class Prj_GUI extends JFrame{
      
      JLabel txtDni = new JLabel("DNI:");
      JTextField getDni=new JTextField(33);
-     JButton comprovació=new JButton("Comprovació");
+     JButton comprovacio=new JButton("Comprovació");
      txtDni.setBounds(10,13,50, 30);
      getDni.setBounds(10, 38, 360, 20);
-     comprovació.setBounds(370, 38, 120, 19);
+     comprovacio.setBounds(370, 38, 120, 19);
      panel.add(txtDni);
      panel.add(getDni);
-     panel.add(comprovació);
+     panel.add(comprovacio);
     
      
      JLabel nomCognoms = new JLabel("Nom y cognoms:");
@@ -99,7 +112,50 @@ public class Prj_GUI extends JFrame{
     JButton estadístiques = new JButton("3");
     JButton fitxer = new JButton("4");
     
-    afegir.setBounds(50, WIDTH, WIDTH, HEIGHT);
+    afegir.setBounds(130, 350, 50, 30);
+    mostrar.setBounds(185,350,50,30);
+    estadístiques.setBounds(240,350,50,30);
+    fitxer.setBounds(295,350,50,30);
+    panel.add(afegir);
+    panel.add(mostrar);
+    panel.add(estadístiques);
+    panel.add(fitxer);
+    
+    comprovacio.addActionListener(new ActionListener(){
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String TSI;
+            String dni,nom,cognom;
+            Genere genere;
+            LocalDate birthDate;
+            dni= getDni.getText();
+            
+            try{ 
+                pac=pacImpl.getPacientbyDNI(dni);
+                TSI=pac.getTSI();
+                getTSI.setText(TSI);
+                
+                per= perImpl.getPersonabyDNI(dni);
+                nom=per.getNom();
+                cognom=per.getCognom();
+                genere=per.getGenere();
+                birthDate=per.getBirthDate();
+                
+                getNomCognoms.setText(nom+" "+cognom);
+                getData_naixement.setText(birthDate.toString());
+                getGènere.setText(genere.toString());
+                
+                
+            }catch(DAOException ex){
+                System.out.println("Ha ocurrido un error");
+            }
+           
+        }
+    
+    });
+    
+    
     
     
     getContentPane().add(panel);
