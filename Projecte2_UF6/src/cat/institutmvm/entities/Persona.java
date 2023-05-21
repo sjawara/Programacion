@@ -5,6 +5,7 @@
 package cat.institutmvm.entities;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  *
@@ -80,6 +81,12 @@ public class Persona {
     this.setGenere(genere);
     
     
+    }
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="behavior">
+        public int getAge() {
+        var period = Period.between(this.getBirthDate(), LocalDate.now());
+        return period.getYears();
     }
 //</editor-fold>
 }

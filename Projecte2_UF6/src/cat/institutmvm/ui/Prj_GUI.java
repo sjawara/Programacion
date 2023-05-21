@@ -126,7 +126,7 @@ public class Prj_GUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             String TSI;
-            String dni,nom,cognom;
+            String dni,nom,cognom,edat;
             Genere genere;
             LocalDate birthDate;
             dni= getDni.getText();
@@ -141,6 +141,8 @@ public class Prj_GUI extends JFrame{
                 cognom=per.getCognom();
                 genere=per.getGenere();
                 birthDate=per.getBirthDate();
+               edat=String.valueOf(per.getAge());
+                getEdat.setText(edat);
                 
                 getNomCognoms.setText(nom+" "+cognom);
                 getData_naixement.setText(birthDate.toString());
