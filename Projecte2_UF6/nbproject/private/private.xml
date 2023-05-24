@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/ui/Prj_GUI.java</file>
-            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/entities/Persona.java</file>
-            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/impl/PacientImplDAO.java</file>
-            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/views/Main.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/model/business/entities/Pacient.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/model/business/entities/Urgencia.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/views/ui/Prj_GUI.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/views/Main.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/persistence/daos/impl/UrgenciaImplDAO.java</file>
+            <file>file:/C:/Users/Seku/Documents/NetBeansProjects/Projecte2_UF6/src/cat/institutmvm/urg/persistence/utils/GestioUtils.java</file>
         </group>
     </open-files>
 </project-private>
