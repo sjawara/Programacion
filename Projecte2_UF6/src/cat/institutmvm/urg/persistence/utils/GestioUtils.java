@@ -51,7 +51,12 @@ public class GestioUtils {
          List<Urgencia> urgencias = new ArrayList<>();
         try{
             while (reader.next()){
-          Urgencia urg = new Urgencia(new Pacient(reader.getString("DNI")),reader.getDate("data").toLocalDate(),reader.getString("motiu"),reader.getInt("torn") );
+                String genere = reader.getString("genere");
+                Genere genere2 = Genere.valueOf(genere);
+                LocalDate birthday2 = reader.getDate("birthdate").toLocalDate();
+          Pacient pac = new Pacient(reader.getString("DNI"),reader.getString("nom"),reader.getString("cognom"),genere2,birthday2);
+          
+          Urgencia urg = new Urgencia(pac,reader.getDate("data").toLocalDate(),reader.getString("motiu"),reader.getInt("torn") );
           LocalDate hoy=  LocalDate.now();
           LocalDate dataUrg = reader.getDate("data").toLocalDate();
           if(dataUrg.equals(hoy)){   

@@ -103,13 +103,13 @@ public class Urgencia implements Visita {
     @Override
             public String toString(){
                 var sb = new StringBuilder();
-                sb.append(String.format("DNI:        %s %n", this.pacient.getDni()));
-                sb.append(String.format("Nom:        %s %n  ", this.getPacient().getDni()));
-                sb.append(String.format("Cognom:     %s %n ",this.getPacient().getCognom()));
-                sb.append(String.format("Nivell:     %s %n", this.getNivell()));
-                //sb.append(String.format("Data:       %d - %d - %d %n", this.getData().getYear(),this.getData().getMonth(),this.getData().getDayOfMonth()));
-                sb.append(String.format("Motiu:      %s %n", this.getMotiu()));
-                sb.append(String.format("Torn:         %d %n", this.getTorn()));
+                sb.append(String.format("DNI:               %s %n", this.pacient.getDni()));
+                sb.append(String.format("Nom:              %s %n", this.getPacient().getNom()));
+                sb.append(String.format("Cognom:       %s %n",this.getPacient().getCognom()));
+                sb.append(String.format("Nivell:            %s %n", this.getNivell()));
+                sb.append(String.format("Motiu:             %s %n", this.getMotiu()));
+                sb.append(String.format("Torn:             %d %n", this.getTorn()));
+                sb.append("\n \n\n" );
                 return sb.toString();
             }
             
@@ -119,5 +119,6 @@ public class Urgencia implements Visita {
         return GestioUtils.Torn();
     }
     
+
     
 }

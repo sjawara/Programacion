@@ -29,6 +29,13 @@ public class Pacient extends Persona implements Comparable<Pacient>{
     this.setTSI(TSI);
     };
     
+    public Pacient(String DNI, String nom, String cognom, Genere genere,LocalDate birthDate){
+    this.setDni(DNI);
+    this.setNom(nom);
+    this.setCognom(cognom);
+    this.setGenere(genere);
+    this.setBirthDate(birthDate);
+    }
     
     public Pacient(String dni, String TSI){
     this(dni,"NULL","NULL",LocalDate.parse("2004-11-19"),Genere.NULL,TSI);

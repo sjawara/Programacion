@@ -47,7 +47,7 @@ public class UrgenciaImplDAO implements UrgenciaDAO{
     public List<Urgencia> getUrgencies() throws DAOException {
         List<Urgencia> listUrg = new ArrayList<>();
         try(var connection = GestioUtils.openConnection();
-                PreparedStatement sentSQL = connection.prepareStatement("Select DNI,nivell,data,motiu,torn From urgencia")){
+                PreparedStatement sentSQL = connection.prepareStatement("Select u.DNI, u.nivell, u.data,u.motiu,u.torn, p.nom, p.cognom, p.genere,p.birthdate From urgencia u JOIN pacient pa ON(u.DNI=pa.DNI) JOIN persona p 	ON(pa.DNI=p.DNI)")){
             try(ResultSet reader = sentSQL.executeQuery()){
             listUrg=GestioUtils.getUrgencies(reader);
             }

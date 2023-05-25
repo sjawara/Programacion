@@ -37,9 +37,6 @@ public class PersonaImplDAO implements PersonaDAO{
         return per;
     }
 
-    @Override
-    public List<Persona> getPersonabyDNI() throws DAOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
     
 }

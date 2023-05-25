@@ -12,6 +12,7 @@ import cat.institutmvm.urg.persistence.exceptions.DAOException;
 import cat.institutmvm.urg.persistence.daos.impl.PacientImplDAO;
 import cat.institutmvm.urg.persistence.daos.impl.PersonaImplDAO;
 import cat.institutmvm.urg.persistence.daos.impl.UrgenciaImplDAO;
+import cat.institutmvm.urg.xml.CreateXml;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -29,6 +30,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
@@ -59,7 +61,7 @@ public class Prj_GUI extends JFrame {
         setSize(screenWidth / 3, screenHeight / 2);//Ponemos tamaño al panel
         setLocation(screenWidth / 4, screenHeight / 4);//Ponemos localización al panel
 
-        this.setTitle("Gestió d'urgencies|Consorci de Salut");//Titulo del panel
+        this.setTitle("Gestió d'urgencies | Consorci de Salut");//Titulo del panel
         JPanel panel = new JPanel();
         var ventanaPrincipal = new JScrollPane(panel);
         //this.setMinimumSize(new Dimension(500,400));
@@ -236,13 +238,31 @@ public class Prj_GUI extends JFrame {
             }
         });
 //</editor-fold>
-        estadistiques.addActionListener(new ActionListener(){
+        //<editor-fold defaultstate="collapsed" desc="funcionEstadistiques">
+estadistiques.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                // Crea y muestra la segunda interfaz
                 Estadistiques est = new Estadistiques();
+                est.setVisible(true);
+            }
+        });
+                
             }
         
         });
+//</editor-fold>
+        fitxer.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+             CreateXml xml = new CreateXml();   
+            }
+        
+        });
+        
+        
         
 
         getContentPane().add(ventanaPrincipal);
