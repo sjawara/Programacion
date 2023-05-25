@@ -38,9 +38,5 @@ public class PacientImplDAO implements PacientDAO{
         return pac;
     }
 
-    @Override
-    public List<Pacient> getPacients() throws DAOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
 }

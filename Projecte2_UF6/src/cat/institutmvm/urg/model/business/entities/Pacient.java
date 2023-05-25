@@ -10,7 +10,7 @@ import java.time.LocalDate;
  *
  * @author Seku
  */
-public class Pacient extends Persona{
+public class Pacient extends Persona implements Comparable<Pacient>{
     private String TSI;
     
 
@@ -37,5 +37,13 @@ public class Pacient extends Persona{
    public Pacient(String DNI){
    this.setDni(DNI);
    }
+
+    @Override
+    public int compareTo(Pacient o) {
+        return this.getCognom().compareTo(o.getCognom());
+    }
     
+    
+    
+   
 }

@@ -127,16 +127,16 @@ public class Prj_GUI extends JFrame {
 
         JButton afegir = new JButton("1");
         JButton mostrar = new JButton("2");
-        JButton estadístiques = new JButton("3");
+        JButton estadistiques = new JButton("3");
         JButton fitxer = new JButton("4");
 
         afegir.setBounds(130, 350, 50, 30);
         mostrar.setBounds(185, 350, 50, 30);
-        estadístiques.setBounds(240, 350, 50, 30);
+        estadistiques.setBounds(240, 350, 50, 30);
         fitxer.setBounds(295, 350, 50, 30);
         panel.add(afegir);
         panel.add(mostrar);
-        panel.add(estadístiques);
+        panel.add(estadistiques);
         panel.add(fitxer);
         //<editor-fold defaultstate="collapsed" desc="funcioComprovar">
         comprovacio.addActionListener(new ActionListener() {
@@ -191,6 +191,7 @@ public class Prj_GUI extends JFrame {
         });
 
 //</editor-fold>
+        //<editor-fold defaultstate="collapsed" desc="funcioMostrar">
         mostrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -207,11 +208,11 @@ public class Prj_GUI extends JFrame {
                         String[] columnTitol = {DNI, NIVELL, DATA, MOTIU, TORN};
                         Component[] components = panel.getComponents();
                         for (Component component : components) {
-                        if (component instanceof JScrollPane) {
-                        panel.remove(component);
-                        break; // Solo necesitamos eliminar uno
-                    }
-                }
+                            if (component instanceof JScrollPane) {
+                                panel.remove(component);
+                                break; // Solo necesitamos eliminar uno
+                            }
+                        }
                         for (int i = 0; i < sizeUrg; i++) {
                             Urgencia urgencia = urgenciess.get(i);
 
@@ -234,6 +235,15 @@ public class Prj_GUI extends JFrame {
                 }
             }
         });
+//</editor-fold>
+        estadistiques.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Estadistiques est = new Estadistiques();
+            }
+        
+        });
+        
 
         getContentPane().add(ventanaPrincipal);
         this.setVisible(true);//Ponemos que el panel se pueda ver
